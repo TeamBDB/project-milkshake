@@ -6,17 +6,25 @@
   "type": "module",
   "author": "Team BDB Studios",
   "scripts": {
-    "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "commit": "cz",
+    "start:dev": "vite"
   },
   "dependencies": {
     "vue": "^3.2.37"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.0.0",
+    "commitizen": "^4.2.5",
+    "cz-conventional-changelog": "3.3.0",
     "typescript": "^4.6.4",
     "vite": "^3.0.0",
     "vue-tsc": "^0.38.4"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
