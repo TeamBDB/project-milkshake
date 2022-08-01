@@ -15,9 +15,12 @@
     "baseUrl": ".",
     "forceConsistentCasingInFileNames": true,
     "paths": {
-      "@app": ["src/App.vue"],
-      "@scenes": ["src/scenes"]
-    }
+      "@app": ["src/main.ts"],
+      "@scenes": ["src/scenes"],
+      "@entities": ["src/entities"]
+    },
+    "typeRoots": ["./node_modules/phaser/types"],
+    "types": ["Phaser"]
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
   "references": [{ "path": "./tsconfig.node.json" }]

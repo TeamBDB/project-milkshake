@@ -1,15 +1,23 @@
-import { createApp } from "vue";
-import { createMemoryHistory, createRouter } from "vue-router";
+import Phaser from "phaser";
+import { MenuScene } from "@scenes";
 
-import App from "./App.vue";
-import { Menu } from "@scenes";
+const phaserConfig: Phaser.Types.Core.GameConfig = {
+  pixelArt: true,
+  type: Phaser.AUTO,
+  scene: [MenuScene],
+  width: window.innerWidth,
+  height: window.innerHeight,
+  title: "Project Milkshake",
+  backgroundColor: "#cdcdcd",
+  physics: {
+    default: "matter",
+    matter: {
+      gravity: {
+        y: 0,
+      },
+      debug: true,
+    },
+  },
+};
 
-const router = createRouter({
-  history: createMemoryHistory(),
-  routes: [{ path: "", name: "Menu", component: Menu }],
-});
-
-const vueApp = createApp(App);
-
-vueApp.use(router);
-vueApp.mount("#app");
+export const phaserGame = new Phaser.Game(phaserConfig);
