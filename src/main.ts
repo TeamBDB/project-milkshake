@@ -1,14 +1,15 @@
 import Phaser from "phaser";
-import { MenuScene } from "@scenes";
+
+import { BootScene, MenuScene, GameScene } from "@scenes";
 
 const phaserConfig: Phaser.Types.Core.GameConfig = {
   pixelArt: true,
   type: Phaser.AUTO,
-  scene: [MenuScene],
+  scene: [BootScene, MenuScene, GameScene],
   width: window.innerWidth,
   height: window.innerHeight,
   title: "Project Milkshake",
-  backgroundColor: "#cdcdcd",
+  backgroundColor: "#333333",
   physics: {
     default: "matter",
     matter: {

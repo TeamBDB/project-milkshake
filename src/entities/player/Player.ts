@@ -1,14 +1,15 @@
 export class Player extends Phaser.Physics.Matter.Sprite {
   constructor(params: {
     scene: Phaser.Scene;
-    x: number;
-    y: number;
     key: string;
+    x?: number;
+    y?: number;
     frame?: number;
     options?: Phaser.Types.Physics.Matter.MatterBodyConfig;
   }) {
     const { scene, x, y, key, frame, options } = params;
-    super(scene.matter.world, x, y, key, frame, options);
+
+    super(scene.matter.world, x || 0, y || 0, key, frame, options);
     scene.add.existing(this);
     scene.anims.create({
       key: "idle",

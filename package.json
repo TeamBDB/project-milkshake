@@ -9,7 +9,6 @@
     "dev": "vite",
     "build": "vite build",
     "start": "yarn build && http-server ./dist",
-    "deploy": "yarn build && firebase deploy",
     "preview": "vite preview",
     "commit": "cz"
   },
